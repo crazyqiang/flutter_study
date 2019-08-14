@@ -92,14 +92,14 @@ Widget _buildHead(BuildContext context) {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                'Blog:http://blog.csdn.net/u013700502',
+                'Blog: http://blog.csdn.net/u013700502',
                 style: TextStyle(color: Colors.white, fontSize: 14.0),
               ),
               SizedBox(
                 height: 5.0,
               ),
               Text(
-                'Email:mqcoder90@gmail.com',
+                'Email: mqcoder90@gmail.com',
                 style: TextStyle(color: Colors.white, fontSize: 14.0),
               ),
               SizedBox(
