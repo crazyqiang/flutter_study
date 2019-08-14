@@ -2,7 +2,7 @@
 
 class C {
   //路由名字
-  static const String WORK_PAGE = "/work_page";
+  static const String CONTAINER_PAGE = "/container_page";
 }
 
 //颜色类

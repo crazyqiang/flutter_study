@@ -28,9 +28,8 @@ class DrawerState extends State<DrawerPage> {
 
 List<DrawerBean> buildList() {
   List<DrawerBean> list = [];
-  list.add(new DrawerBean('', '', '', 0));
-  list.add(new DrawerBean(
-      C.WORK_PAGE, 'assets/images/ic_work_bench.png', '控件系列', 1));
+  list.add(new DrawerBean('', null, '', 0));
+  list.add(new DrawerBean(C.CONTAINER_PAGE, Icons.grid_on, '控件系列', 1));
   return list;
 }
 
@@ -51,12 +50,11 @@ Widget _buildMenus() {
           //内容Item
           DrawerBean bean = list[index];
           return ListTile(
-            title: Text(bean.menuName),
-            leading: new Image.asset(
-              bean.imgName,
-              width: 25.0,
-              height: 25.0,
+            title: Container(
+              padding: EdgeInsets.only(left: 40.0),
+              child: Text(bean.menuName),
             ),
+            leading: Icon(bean.iconData),
             onTap: () {
               Navigator.pop(context);
             },
@@ -67,17 +65,21 @@ Widget _buildMenus() {
 
 Widget _buildHead(BuildContext context) {
   return Container(
-    padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+    padding: EdgeInsets.only(top: 20.0, bottom: 5.0),
     color: Color(Col.bg_bar_color),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         new GestureDetector(
-          child: new ClipOval(
-            child: new Image.asset(
-              'assets/images/icon_photo.jpeg',
-              width: 60.0,
-              height: 60.0,
+          child: Container(
+            margin: EdgeInsets.only(left: 10.0),
+            child: new ClipOval(
+              child: new Image.asset(
+                'assets/images/icon_photo.jpeg',
+                width: 60.0,
+                height: 60.0,
+              ),
             ),
           ),
           onTap: () {
@@ -86,13 +88,14 @@ Widget _buildHead(BuildContext context) {
         ),
         //中间
         Container(
+          padding: EdgeInsets.only(left: 10.0),
           margin: EdgeInsets.only(top: 10.0, bottom: 8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                'Blog: http://blog.csdn.net/u013700502',
+                'Author: 小马快跑',
                 style: TextStyle(color: Colors.white, fontSize: 14.0),
               ),
               SizedBox(
@@ -106,7 +109,7 @@ Widget _buildHead(BuildContext context) {
                 height: 5.0,
               ),
               Text(
-                'Author: 小马快跑',
+                'Blog: http://blog.csdn.net/u013700502',
                 style: TextStyle(color: Colors.white, fontSize: 14.0),
               ),
             ],

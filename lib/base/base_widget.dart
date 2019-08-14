@@ -21,29 +21,28 @@ class BaseWidget extends StatelessWidget {
   }
 }
 
-//class BaseNoTitleWidget extends StatelessWidget {
-//  Widget child;
-//  DrawerPageClick clickListener;
-//
-//  BaseNoTitleWidget({Key key, this.child, this.clickListener})
-//      : super(key: key);
-//
-//  @override
-//  Widget build(BuildContext context) {
-//    return Scaffold(
-//      body: Center(
-//        child: child,
-//      ),
-//    );
-//  }
-//}
+class BaseNoTitleWidget extends StatelessWidget {
+  Widget child;
+
+  BaseNoTitleWidget({Key key, this.child}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: child,
+      ),
+    );
+  }
+}
 
 class BaseDrawerWidget extends StatelessWidget {
   Widget child;
   String title;
   List<Widget> rightBtns;
 
-  BaseDrawerWidget({Key key, this.child, this.title, this.rightBtns})
+  BaseDrawerWidget(
+      {Key key, @required this.child, @required this.title, this.rightBtns})
       : super(key: key);
 
   @override
