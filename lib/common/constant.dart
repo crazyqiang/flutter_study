@@ -2,6 +2,7 @@
 
 class C {
   //路由名字
+  static const String WIDGET_PAGE = "/widget_page";
   static const String CONTAINER_PAGE = "/container_page";
 }
 
