@@ -24,17 +24,41 @@ class _ContainerPageState extends State<ContainerPage> {
     return BaseWidget(
       title: 'Container&Decoration',
       child: SingleChildScrollView(
-        padding: EdgeInsets.only(left: 20.0, right: 20.0),
+        padding: EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            //BoxDecoration
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Text('Container:'),
+                Text('BoxDecoration:'),
                 Container(
-                  width: width * 0.5,
-                  padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+                  width: width * 0.4,
+                  padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                          color: Color(0xFF00FFFF),
+                          style: BorderStyle.solid,
+                          width: 2.0)),
+                  alignment: AlignmentDirectional.center,
+                  child: Text('I am Container'),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            //ShapeDecoration
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Text('ShapeDecoration:'),
+                Container(
+                  width: width * 0.4,
+                  padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+                  //可以使用ShapeDecoration绘制边框 效果同上
                   decoration: ShapeDecoration(
                     shape: Border.all(
                         color: Color(0xFF00FFFF),
@@ -47,14 +71,62 @@ class _ContainerPageState extends State<ContainerPage> {
               ],
             ),
             SizedBox(
+              height: 10.0,
+            ),
+            //FlutterLogoDecoration
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(
+                  width: 20.0,
+                ),
+                Text('FlutterLogoDecoration:'),
+                SizedBox(
+                  width: 20.0,
+                ),
+                Container(
+                  width: 50.0,
+                  height: 50.0,
+                  decoration: FlutterLogoDecoration(
+                      lightColor: Colors.brown,
+                      darkColor: Colors.green,
+                      textColor: Colors.white),
+                  child: Text(''),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+
+            //UnderlineTabIndicator
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Text('UnderlineTabIndicator:'),
+                Container(
+                  margin: EdgeInsets.only(left: 20.0, right: 20.0),
+                  decoration: UnderlineTabIndicator(
+                      borderSide: BorderSide(color: Colors.red, width: 2.0),
+                      insets: EdgeInsets.fromLTRB(0, 10, 0, 0)),
+                  child: Text(
+                    'I am Container',
+                    softWrap: true,
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
               height: 20.0,
             ),
+
+            //使用BoxDecoration封装一个常用背景
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Text(
-                  '封装通用背景Container',
-                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w700),
+                  'BoxDecoration封装常用背景',
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w700),
                 ),
               ],
             ),
@@ -117,10 +189,9 @@ class _ContainerPageState extends State<ContainerPage> {
                   '阴影： ',
                   style: TextStyle(fontWeight: FontWeight.w700),
                 ),
-                //渐变
+                //阴影
                 BaseBgWidget(
                   child: Text('I am Container'),
-//                  borderRadius: 5.0,
                   margin: EdgeInsets.only(
                       top: 20.0, left: 10.0, right: 10.0, bottom: 10.0),
                   borderColor: Colors.black,
@@ -197,12 +268,12 @@ class _ContainerPageState extends State<ContainerPage> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                //可点击事件
+                //圆形背景
                 BaseBgWidget(
                   child: Center(
                     child: Text(
                       'Circle',
-                      style: TextStyle(color: Colors.black,fontSize: 16.0),
+                      style: TextStyle(color: Colors.black, fontSize: 16.0),
                     ),
                   ),
                   shape: BoxShape.circle,
@@ -218,68 +289,6 @@ class _ContainerPageState extends State<ContainerPage> {
           ],
         ),
       ),
-
-//      Container(
-//        height: 50.0,
-//        width: 200.0,
-////        constraints: BoxConstraints.expand(
-////            height: Theme.of(context).textTheme.display1.fontSize + 100),
-////            width: Theme.of(context).textTheme.display1.w,
-////        padding:
-////            EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0, bottom: 10.0),
-////        decoration: BoxDecoration(
-////            border: Border.all(color: Colors.brown, width: 1.0),
-//////            borderRadius: BorderRadius.circular(200.0),
-////            shape: BoxShape.circle,
-////            color: Colors.white),
-//
-//        decoration: new BoxDecoration(
-//          border: new Border.all(color: Color(0xFFFF0000), width: 0.5),
-//          // 边色与边宽度
-//          color: Color(0xFF9E9E9E),
-//          // 底色
-//          //        borderRadius: new BorderRadius.circular((20.0)), // 圆角度
-//          borderRadius: new BorderRadius.vertical(
-//              top: Radius.elliptical(10, 10)), // 也可控件一边圆角大小
-//        ),
-//        child: Center(
-//          child: Text('I am Container'),
-//        ),
-//      ),
-//          Container(
-////        height: 300,
-//        color: Colors.brown,
-//        child: ListView(
-//          padding: EdgeInsets.only(left: 10, right: 10),
-//          scrollDirection: Axis.vertical,
-//          children: <Widget>[
-//            Column(
-//              children: <Widget>[
-//                SizedBox(
-//                  height: 50.0,
-//                ),
-//                Container(
-//                  width: width * 0.5,
-//                  height: 50.0,
-//                  alignment: AlignmentDirectional.center,
-//                  constraints: BoxConstraints.expand(width: 200, height: 50),
-//                  color: Colors.green,
-////            padding: EdgeInsets.only(
-////                left: 20.0, right: 20.0, top: 10.0, bottom: 10.0),
-////            decoration: BoxDecoration(
-////                border: Border.all(color: Colors.blue, width: 1.0),
-////                borderRadius: BorderRadius.circular(20.0),
-////                color: Colors.white),
-////            child:
-////            Center(
-//                  child: Text('I am Container'),
-////            ),
-//                ),
-//              ],
-//            ),
-//          ],
-//        ),
-//      ),
     );
   }
 
