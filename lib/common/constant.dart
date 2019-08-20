@@ -4,6 +4,12 @@ class C {
   //路由名字
   static const String WIDGET_PAGE = "/widget_page";
   static const String CONTAINER_PAGE = "/container_page";
+  static const String LIFE_CYCLER_PAGE = "/lifecycle_page";
+  static const String OTHER_PAGE = "/other_page";
+
+  //menu名称
+  static const String MENU_WIDGET = "控件系列";
+  static const String MENU_OTHER = "其他";
 }
 
 //颜色类

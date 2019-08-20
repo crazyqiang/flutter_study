@@ -3,35 +3,30 @@ import 'package:flutter_study/base/base_widget.dart';
 import 'package:flutter_study/base/bg_container_widget.dart';
 import 'package:flutter_study/common/constant.dart';
 
-class WidgetPage extends StatefulWidget {
+class OtherPage extends StatefulWidget {
   @override
-  _WidgetPageState createState() {
-    return _WidgetPageState();
+  _OtherPageState createState() {
+    return _OtherPageState();
   }
 }
 
-class _WidgetPageState extends State<WidgetPage> {
+class _OtherPageState extends State<OtherPage> {
   @override
   void initState() {
     super.initState();
   }
 
   @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return BaseNoTitleWidget(
-//      title: 'widget',
+//      title: 'other',
       child: ListView(
         scrollDirection: Axis.vertical,
         children: <Widget>[
           Center(
             child: BaseBgWidget(
               child: Text(
-                'Container&Decoration',
+                'LifeCycle',
                 style: TextStyle(color: Colors.white),
               ),
               borderRadius: 5.0,
@@ -40,7 +35,7 @@ class _WidgetPageState extends State<WidgetPage> {
               fillDefaultColor: Color(0xff8d6e63),
               fillActiveColor: Colors.brown,
               onPress: () {
-                Navigator.of(context).pushNamed(C.CONTAINER_PAGE);
+                Navigator.of(context).pushNamed(C.LIFE_CYCLER_PAGE);
               },
             ),
           )

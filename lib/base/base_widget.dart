@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../drawer.dart';
+import '../drawerMenu.dart';
 
 class BaseWidget extends StatelessWidget {
   Widget child;
@@ -52,7 +52,7 @@ class BaseDrawerWidget extends StatelessWidget {
         title: Text(title),
         actions: rightBtns,
       ),
-      drawer: DrawerPage(),
+      drawer: DrawerMenuPage(),
       body: Center(
         child: child,
       ),
@@ -76,7 +76,7 @@ class BaseDrawerTabWidget extends StatelessWidget {
         appBar: AppBar(
           title: title,
         ),
-        drawer: DrawerPage(),
+        drawer: DrawerMenuPage(),
         body: Center(
           child: child,
         ),
